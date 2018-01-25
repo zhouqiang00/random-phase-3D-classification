@@ -70,7 +70,11 @@ else:
 		for line in f:
 			ln_s = line.split()
 			if (len(ln_s) > 3):
-				array_clsnumber.itemset((j,i),int(ln_s[i_classnumber]) - 1)
+				if int(ln_s[i_classnumber]) >= 2:
+                                        myclassnumber=1
+                                else:
+                                        myclassnumber=0
+				array_clsnumber.itemset((j,i),myclassnumber)
 				j += 1
 		f.close()
 		i += 1
